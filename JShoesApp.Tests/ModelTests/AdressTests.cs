@@ -9,7 +9,7 @@ public class AddressTests
     {
         // Arrange
         string expectedCountryName = "Canada";
-        Address newAddress = new Address("Canada");
+        Address newAddress = new Address("Canada", "Alberta");
 
         // Act
         string actualCountryName = newAddress.CountryName;
@@ -23,12 +23,40 @@ public class AddressTests
     {
         // Arrange
         string expectedCountryName = "Mexico";
-        Address newAddress = new Address("Canada");
+        Address newAddress = new Address("Canada", "Alberta");
 
         // Act
         newAddress.CountryName = "Mexico";
 
         // Assert
         Assert.Equal(expectedCountryName, newAddress.CountryName);
+    }
+
+    [Fact]
+    public void GetStateName_GetsStateNameInAnAddress_String()
+    {
+        // Arrange
+        string expectedStateName = "Michigan";
+        Address newAddress = new Address("United States Of America", "Michigan");
+
+        // Act
+        string actualStateName = newAddress.StateName;
+
+        // Assert
+        Assert.Equal(expectedStateName, actualStateName);
+    }
+
+    [Fact]
+    public void SetStateName_SetsStateNameInAddress_Void()
+    {
+        // Arrange
+        string expectedStateName = "Washington DC";
+        Address newAddress = new Address("United States Of America", "Michigan");
+        
+        // Act
+        newAddress.StateName = "Washington DC";
+
+        // Assert
+        Assert.Equal(expectedStateName, newAddress.StateName);
     }
 }
