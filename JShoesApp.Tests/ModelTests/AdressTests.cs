@@ -5,11 +5,11 @@ namespace JShoesAppTests.ModelTests;
 public class AddressTests
 {
     [Fact]
-    public void GetCountry_GetsCountryNameInAnAddress_String()
+    public void GetCountry_ReturnsCountryNameInAnAddress_String()
     {
         // Arrange
         string expectedCountryName = "Canada";
-        Address newAddress = new Address("Canada", "Alberta");
+        Address newAddress = new Address("Canada", "Alberta", "Toronto");
 
         // Act
         string actualCountryName = newAddress.CountryName;
@@ -23,7 +23,7 @@ public class AddressTests
     {
         // Arrange
         string expectedCountryName = "Mexico";
-        Address newAddress = new Address("Canada", "Alberta");
+        Address newAddress = new Address("Canada", "Alberta", "Toronto");
 
         // Act
         newAddress.CountryName = "Mexico";
@@ -33,11 +33,11 @@ public class AddressTests
     }
 
     [Fact]
-    public void GetStateName_GetsStateNameInAnAddress_String()
+    public void GetStateName_ReturnsStateNameInAnAddress_String()
     {
         // Arrange
         string expectedStateName = "Michigan";
-        Address newAddress = new Address("United States Of America", "Michigan");
+        Address newAddress = new Address("United States Of America", "Michigan", "Manhattan");
 
         // Act
         string actualStateName = newAddress.StateName;
@@ -51,12 +51,40 @@ public class AddressTests
     {
         // Arrange
         string expectedStateName = "Washington DC";
-        Address newAddress = new Address("United States Of America", "Michigan");
+        Address newAddress = new Address("United States Of America", "Michigan", "Manhattan");
         
         // Act
         newAddress.StateName = "Washington DC";
 
         // Assert
         Assert.Equal(expectedStateName, newAddress.StateName);
+    }
+
+    [Fact]
+    public void GetCityName_ReturnsCityNameInAnAddress_String()
+    {
+        // Arrange
+        string expectedCityName = "Brooklyn";
+        Address newAddress = new Address("United States Of America", "New York", "Brooklyn");
+
+        // Act
+        string actualCityName = "Brooklyn";
+
+        // Assert
+        Assert.Equal(expectedCityName, actualCityName);
+    }
+
+    [Fact]
+    public void SetCityName_SetsCityNameInAddress_Void()
+    {
+        // Arrange
+        Address newAddress = new Address("United States Of America", "New York", "Brooklyn");
+        string expectedCityName = "New York City";
+        
+        // Act
+        newAddress.CityName = "New York City";
+
+        // Assert
+        Assert.Equal(expectedCityName, newAddress.CityName);
     }
 }
