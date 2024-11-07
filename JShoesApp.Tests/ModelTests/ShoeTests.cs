@@ -70,14 +70,15 @@ public class ShoeTests
     {
         // Arrange
         decimal expectedShoePrice = 125.22M;
-         Shoe newShoe = new Shoe("Nike Air max 150", 150.99M);
+        Shoe newShoe = new Shoe("Nike Air max 150", 150.99M);
 
         //  Act
         newShoe.ShoePrice = 125.22M;
 
         // Assert
         Assert.Equal(expectedShoePrice, newShoe.ShoePrice);
-
     }
+
+
 
 }
