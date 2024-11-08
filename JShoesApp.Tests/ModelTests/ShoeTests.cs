@@ -40,15 +40,7 @@ public class ShoeTests
         Assert.Equal(expectedShoeName, newShoe.ShoeName);
     }
 
-    // [Fact]
-    // public void GetShoeBrand_GetsAShoeBrand_Enum()
-    // {
-    //     // Arrange
-    //     Shoe newShoe = new Shoe("Nike Air max 150");
-    //     string expectedShoeBrand = 
-    // 
-    // }
-
+    // Try testing just Brand and Color enums
 
 
 
