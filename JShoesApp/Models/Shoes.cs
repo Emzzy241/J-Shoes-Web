@@ -1,37 +1,40 @@
 
 namespace JShoesApp.Models;
+
+
+public enum Brand
+{
+    Nike,
+    Balenciaga,
+    Jordan
+}
+
+public enum Color
+{
+    White,
+    Black,
+    Green       
+}
+
+
 public class Shoe
 {
     public string ShoeName { get; set; }
-    public enum Brand
-    {
-        Nike = 200,
-        Balenciaga = 200,
-        Jordan = 300
-    }
 
-    public enum Color
-    {
-        White = 52,
-        Black = 37,
-        Green = 19        
-    }
+    public Brand Brand { get; set; }
 
-    // public enum Size
-    // {
-
-    // }
+    public Color Color { get; set; }
 
     public decimal ShoePrice { get; set; }
     
     
     
-    public Shoe(string shoeName, decimal shoePrice)
+    public Shoe(string shoeName, Brand brand, Color color, decimal shoePrice)
     {
         ShoeName = shoeName;
-        // Brand = brand;
-
-        ShoePrice =shoePrice;
+        Brand = brand;
+        Color = color;
+        ShoePrice = shoePrice;
     }
 
     
