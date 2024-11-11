@@ -42,6 +42,8 @@ public class ShoeTests
 
     // Try testing just Brand and Color enums
 
+    // Testing the enums in the Shoe class
+
 
 
     [Fact]
