@@ -27,12 +27,12 @@ public class OrderTests
         // Assert
         Assert.Equal(expectedTotalPrice, actualTotalPrice);
     }
-    
+
     [Fact]
     public void SetTotalPrice_SetsTotalPriceForOrder_Void()
     {
         // Arrange
-        Order order = new Order(Status.NotYetCompleted, 220.43M);
+        Order order = new Order(Status.Pending, 220.43M);
         decimal expectedTotalPrice = 330.33M;
 
         // Act
@@ -40,6 +40,20 @@ public class OrderTests
 
         // Assert
         Assert.Equal(expectedTotalPrice, order.TotalPrice);
+    }
+
+    [Fact]
+    public void GetOrderDate_GetsTheDateOrderWasMade_Date()
+    {
+        // Arrange
+        Order order = new Order(Status.Completed, 250.42M, (2024, 11, 13));
+        DateOnly expectedDate = new DateOnly(2024, 11, 14);
+
+        // Act
+        DateOnly actualDate = order.expectedDate;
+
+        // Assert
+        Assert.Equal(expectedDate, actualDate);
     }
 
 
