@@ -10,9 +10,11 @@ public enum Status
 public class Order
 {
     public Status Status { get; set; }
+    public decimal TotalPrice { get; set; }
 
-    public Order(Status status)
+    public Order(Status status, decimal totalPrice)
     {
         Status = status;
+        TotalPrice = totalPrice;
     }
 }
