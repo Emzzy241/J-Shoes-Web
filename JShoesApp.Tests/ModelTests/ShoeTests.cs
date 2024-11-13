@@ -9,7 +9,7 @@ public class ShoeTests
     [Fact]
     public void Shoe_CreatesInstanceOfShoe_Shoe()
     {
-        Shoe newShoe = new Shoe("Jordan A460", Brand.Nike, Color.White, 150.99M);
+        Shoe newShoe = new Shoe("Jordan A460", Brand.Nike, Color.White, 150.99M, PriceRange.MoreThanHundredDollars);
         Assert.Equal(typeof(Shoe), newShoe.GetType());
     }
 
@@ -18,7 +18,7 @@ public class ShoeTests
     {
         // Arrange
         string expectedShoeName = "Nike Air max 150";
-        Shoe newShoe = new Shoe("Nike Air max 150", Brand.Nike, Color.White, 150.99M);
+        Shoe newShoe = new Shoe("Nike Air max 150", Brand.Nike, Color.White, 150.99M, PriceRange.MoreThanHundredDollars);
 
         // Act
         string actualShoeName = newShoe.ShoeName;
@@ -31,7 +31,7 @@ public class ShoeTests
     public void SetShoeName_SetNameOfShoe_Void()
     {
         // Arrange
-        Shoe newShoe = new Shoe("Nike Air max 150", Brand.Nike, Color.White, 150.99M);
+        Shoe newShoe = new Shoe("Nike Air max 150", Brand.Nike, Color.White, 150.99M, PriceRange.MoreThanHundredDollars);
         string expectedShoeName = "Balenciaga A12";
         // Act
         newShoe.ShoeName = "Balenciaga A12";
@@ -51,7 +51,7 @@ public class ShoeTests
     {
         // Arrange
         decimal expectedShoePrice = 150.99M;
-        Shoe newShoe = new Shoe("Nike Air max 150", Brand.Nike, Color.White, 150.99M);
+        Shoe newShoe = new Shoe("Nike Air max 150", Brand.Nike, Color.White, 150.99M, PriceRange.MoreThanHundredDollars);
 
         // Act
         decimal actualShoePrice = newShoe.ShoePrice;
@@ -65,7 +65,7 @@ public class ShoeTests
     {
         // Arrange
         decimal expectedShoePrice = 125.22M;
-        Shoe newShoe = new Shoe("Nike Air max 150", Brand.Nike, Color.White, 150.99M);
+        Shoe newShoe = new Shoe("Nike Air max 150", Brand.Nike, Color.White, 150.99M, PriceRange.MoreThanHundredDollars);
 
         //  Act
         newShoe.ShoePrice = 125.22M;
