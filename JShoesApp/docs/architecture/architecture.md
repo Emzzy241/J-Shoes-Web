@@ -1,4 +1,5 @@
 # Architecture
+
 Application was built using a Layered(3-tier) Monolithic Architecture.
 
 ## The Layered (3-tier) Architecture
@@ -16,4 +17,5 @@ Inside this layer,
 **•**  All user inputs such as HTTP requests from a web browser or API client will be handled by the Presentation Layer (Controllers). And thus enforcing separation of concern.
 
 ## Why a Monolithic Architecture was used?
+
 J-SHOES Store Inc. only owns a small to medium sized retail store, simplicity should be a key factor and the Monolithic approach should be sufficient for the business needs. Also, having a Monolithic architecture means all server logic would be in one codebase, and since Client has less than 50,000 Customers it’s a good idea to stick with this Monolithic approach.
