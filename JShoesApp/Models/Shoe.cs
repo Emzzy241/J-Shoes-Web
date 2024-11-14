@@ -73,6 +73,12 @@ public class Shoe
         decimal newPrice = 0.00M;
         switch (discount)
         {
+            case 0:
+                newPrice = oldPrice - (oldPrice * 0.00M);
+                break;
+            case 5:
+                newPrice = oldPrice - (oldPrice * 0.05M);
+                break;
             case 10:
                 newPrice = oldPrice - (oldPrice * 0.10M);
                 break;
