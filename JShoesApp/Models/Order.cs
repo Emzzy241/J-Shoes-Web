@@ -30,23 +30,15 @@ public class Order
         return _shoeList;
     }
 
-    // public static decimal TotalPrice(List<Shoe> shoes)
-    // {
-    //     if(shoes == null || shoes.Count == 0)
-    //     {
-    //         return 0m; 
-    //     }
-
-    //     return shoes.Sum(shoe => shoe.Price);
-    // }
-
     public static decimal TotalPrice(List<Shoe> shoes)
     {
-        decimal TotalPrice = 0.00M;
-        foreach (var shoe in shoes)
-        {   
-            TotalPrice += shoe.Price;
+        if(shoes == null || shoes.Count == 0)
+        {
+            return 0m; 
         }
-        return TotalPrice;
+
+        return shoes.Sum(shoe => shoe.Price);
     }
+
+  
 }
