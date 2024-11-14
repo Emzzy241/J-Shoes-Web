@@ -7,73 +7,47 @@ namespace JShoesAppTests.ModelTests;
 public class ShoeTests
 {
     [Fact]
-    public void Shoe_CreatesInstanceOfShoe_Shoe()
-    {
-        Shoe newShoe = new Shoe("Jordan A460", Brand.Nike, Color.White, 150.99M, PriceRange.MoreThanHundredDollars);
-        Assert.Equal(typeof(Shoe), newShoe.GetType());
-    }
-
-    [Fact]
-    public void GetShoeName_GetNameOfShoe_String()
+    public void IsAvailable_ShouldReturnTrue_WhenStockIsGreaterThanZero()
     {
         // Arrange
-        string expectedShoeName = "Nike Air max 150";
-        Shoe newShoe = new Shoe("Nike Air max 150", Brand.Nike, Color.White, 150.99M, PriceRange.MoreThanHundredDollars);
+        Shoe shoe = new Shoe("Nike Air max 123", Brand.Nike, Color.Red,  10.67M, Range.TwentyDollarsOrLess, 10);
 
         // Act
-        string actualShoeName = newShoe.ShoeName;
+        bool isAvailable = shoe.IsAvailable();
 
         // Assert
-        Assert.Equal(expectedShoeName, actualShoeName);
+        Assert.True(isAvailable, "Shoe should be available when stock is greater than zero");
     }
 
     [Fact]
-    public void SetShoeName_SetNameOfShoe_Void()
+    public void IsAvailable_ShouldReturnFalse_WhenStockIsZero()
     {
         // Arrange
-        Shoe newShoe = new Shoe("Nike Air max 150", Brand.Nike, Color.White, 150.99M, PriceRange.MoreThanHundredDollars);
-        string expectedShoeName = "Balenciaga A12";
-        // Act
-        newShoe.ShoeName = "Balenciaga A12";
-
-        // Assert
-        Assert.Equal(expectedShoeName, newShoe.ShoeName);
-    }
-
-    // Try testing just Brand and Color enums
-
-    // Testing the enums in the Shoe class
-
-
-
-    [Fact]
-    public void GetShoePrice_GetPriceOfShoe_Decimal()
-    {
-        // Arrange
-        decimal expectedShoePrice = 150.99M;
-        Shoe newShoe = new Shoe("Nike Air max 150", Brand.Nike, Color.White, 150.99M, PriceRange.MoreThanHundredDollars);
+        Shoe shoe = new Shoe("Louis Vuitton 975", Brand.LouisVuitton, Color.White,  99.99M, Range.HundredDollarsOrLess, 0);
 
         // Act
-        decimal actualShoePrice = newShoe.ShoePrice;
+        bool isAvailable = shoe.IsAvailable();
 
         // Assert
-        Assert.Equal(expectedShoePrice, actualShoePrice);
+        Assert.False(isAvailable, "Shoe should not be available when stock is zero");
     }
 
     [Fact]
-    public void SetShoePrice_SetPriceOfShoe_Void()
+    public void ApplyDiscount_ShouldReturnNewPrice_WhenDiscountIsApplied()
     {
         // Arrange
-        decimal expectedShoePrice = 125.22M;
-        Shoe newShoe = new Shoe("Nike Air max 150", Brand.Nike, Color.White, 150.99M, PriceRange.MoreThanHundredDollars);
+        Shoe shoe = new Shoe("Louis Vuitton 975", Brand.LouisVuitton, Color.White,  100.00M, Range.HundredDollarsOrLess, 0);
 
-        //  Act
-        newShoe.ShoePrice = 125.22M;
+        // Act
+        decimal newPrice = shoe.ApplyDiscount(shoe.Price, 10);
+        decimal newPrice2 = shoe.ApplyDiscount(shoe.Price, 20);
+        decimal newPrice3 = shoe.ApplyDiscount(shoe.Price, 50);
 
         // Assert
-        Assert.Equal(expectedShoePrice, newShoe.ShoePrice);
+        Assert.Equal(90.00M, newPrice);
+        Assert.Equal(80.00M, newPrice2);
+        Assert.Equal(50.00M, newPrice3);
     }
-
 
 
 }
