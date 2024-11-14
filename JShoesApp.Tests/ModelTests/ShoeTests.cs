@@ -10,7 +10,7 @@ public class ShoeTests
     public void IsAvailable_ShouldReturnTrue_WhenStockIsGreaterThanZero()
     {
         // Arrange
-        Shoe shoe = new Shoe("Nike Air max 123", Brand.Nike, Color.Red,  10.67M, Range.TwentyDollarsOrLess, 10);
+        Shoe shoe = new Shoe("Nike Air max 123", Brand.Nike, Color.Red,  10.67M, PriceRange.TwentyDollarsOrLess, 10);
 
         // Act
         bool isAvailable = shoe.IsAvailable();
@@ -23,7 +23,8 @@ public class ShoeTests
     public void IsAvailable_ShouldReturnFalse_WhenStockIsZero()
     {
         // Arrange
-        Shoe shoe = new Shoe("Louis Vuitton 975", Brand.LouisVuitton, Color.White,  99.99M, Range.HundredDollarsOrLess, 0);
+        Shoe shoe = new Shoe("Louis Vuitton 975", Brand.LouisVuitton, Color.White,  99.99M, PriceRange.HundredDollarsOrLess, 1);
+        shoe.Stock--; // simulate purchase reducing stock to 0
 
         // Act
         bool isAvailable = shoe.IsAvailable();
@@ -36,7 +37,7 @@ public class ShoeTests
     public void ApplyDiscount_ShouldReturnNewPrice_WhenDiscountIsApplied()
     {
         // Arrange
-        Shoe shoe = new Shoe("Louis Vuitton 975", Brand.LouisVuitton, Color.White,  100.00M, Range.HundredDollarsOrLess, 0);
+        Shoe shoe = new Shoe("Louis Vuitton 975", Brand.LouisVuitton, Color.White,  100.00M, PriceRange.HundredDollarsOrLess, 0);
 
         // Act
         decimal newPrice = shoe.ApplyDiscount(shoe.Price, 0);
@@ -52,8 +53,5 @@ public class ShoeTests
         Assert.Equal(80.00M, newPrice4);
         Assert.Equal(50.00M, newPrice5);
     }
-
-        
-
 
 }

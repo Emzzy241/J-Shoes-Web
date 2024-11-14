@@ -18,7 +18,7 @@ public enum Color
     Red      
 }
 
-public enum Range
+public enum PriceRange 
 {
     TwentyDollarsOrLess, // $0-$20
     FiftyDollarsOrLess, // $21-$50
@@ -44,19 +44,19 @@ public class Shoe
 
     }
 
-    public Range Range { get; set; }
+    public PriceRange PriceRange { get; set; }
     
     public int Stock { get; set; }
 
     public decimal Discount { get; set; }
     
-    public Shoe(string name, Brand brand, Color color, decimal price, Range range, int stock)
+    public Shoe(string name, Brand brand, Color color, decimal price, PriceRange range, int stock)
     {
         Name = name;
         Brand = brand;
         Color = color;
         Price = price;
-        Range = range;
+        PriceRange = range;
         Stock = stock;
     }
 
