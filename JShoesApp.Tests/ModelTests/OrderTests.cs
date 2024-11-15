@@ -16,18 +16,17 @@ public class OrderTests
         Shoe shoe3 = new Shoe("Balenciaga Y9", Brand.Balenciaga, Color.White,  135.00M, PriceRange.MoreThanHundredDollars, 60);
         decimal expectedTotal = 284.99m;
 
-        // List<Shoe> 
-
         // Act
-        List<Shoe> shoeList = new List<Shoe>(){shoe, shoe2, shoe3};
+        // List<Shoe> shoeList = new List<Shoe>(){shoe, shoe2, shoe3};
+
+        Order.ShoeList.Add(shoe);
+        Order.ShoeList.Add(shoe2);
+        Order.ShoeList.Add(shoe3);
 
         decimal actualTotal = Order.TotalPrice(shoeList);
 
         // Assert
         Assert.Equal(expectedTotal, actualTotal);
-
-
-
     }
 
 }

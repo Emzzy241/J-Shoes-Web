@@ -14,8 +14,7 @@ public enum Status
 public class Order
 {
     public Status Status { get; set; }
-    private static List<Shoe> _shoeList = new List<Shoe> (){};
-    // public decimal TotalPrice { get; set; }
+    public static List<Shoe> ShoeList = new List<Shoe> (){};
     public DateOnly Date { get; set; }
 
 
@@ -25,10 +24,6 @@ public class Order
         Date = date;
     }
 
-    public static List<Shoe> GetAll()
-    {
-        return _shoeList;
-    }
 
     public static decimal TotalPrice(List<Shoe> shoes)
     {
