@@ -7,6 +7,8 @@ namespace JShoesApp.Models;
 
 public class Order
 {
+    public Guid Id { get; set; }
+
     public Status Status { get; set; }
 
     public List<Shoe> ShoeList = new List<Shoe> (){};

@@ -4,6 +4,8 @@ namespace JShoesApp.Models;
 
 public class Shoe
 {
+    public Guid Id { get; set; }
+    
     public string Name { get; set; }
 
     public Brand Brand { get; set; }
@@ -48,7 +50,7 @@ public class Shoe
                 break;
             default:
                 return newPrice;
-                
+
         }
         return newPrice;
     } 

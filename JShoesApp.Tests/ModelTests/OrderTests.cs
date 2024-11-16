@@ -19,7 +19,7 @@ public class OrderTests
         Shoe shoe4 = new Shoe("Balenciaga Y9", Brand.Balenciaga, Color.White, 99.99M);
         decimal expectedTotal = 306.25M;
 
-        Order newOrder = new Order(Status.Pending, DateTime.Now)
+        Order newOrder = new Order(Status.Pending, DateTime.Now);
 
         // Act
         newOrder.ShoeList.Add(shoe);
