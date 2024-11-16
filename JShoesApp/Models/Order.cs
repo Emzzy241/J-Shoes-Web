@@ -19,7 +19,7 @@ public class Order
         Date = date;
     }
 
-    public static decimal TotalPrice(List<Shoe> shoes)
+    public decimal TotalPrice(List<Shoe> shoes)
     {
         if(shoes == null || shoes.Count == 0)
         {
