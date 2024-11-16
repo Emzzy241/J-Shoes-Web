@@ -26,7 +26,7 @@ public class OrderTests
         newOrder.ShoeList.Add(shoe2);
         newOrder.ShoeList.Add(shoe3);
         newOrder.ShoeList.Add(shoe4);
-        decimal actualTotal = newOrder.TotalPrice(Order.ShoeList);
+        decimal actualTotal = newOrder.TotalPrice(newOrder.ShoeList);
 
         // Assert
         Assert.Equal(expectedTotal, actualTotal);
