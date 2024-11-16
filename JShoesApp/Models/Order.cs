@@ -9,11 +9,11 @@ public class Order
 {
     public Status Status { get; set; }
 
-    public static List<Shoe> ShoeList = new List<Shoe> (){};
+    public List<Shoe> ShoeList = new List<Shoe> (){};
 
-    public DateOnly Date { get; set; }
+    public DateTime Date { get; set; } = DateTime.Now;
 
-    public Order(Status status, DateOnly date)
+    public Order(Status status, DateTime date)
     {
         Status = status;
         Date = date;

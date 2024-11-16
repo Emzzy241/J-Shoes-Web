@@ -16,31 +16,16 @@ public class Shoe
     public decimal Price { 
         get => _price; 
         set => _price = Math.Round(value, 2);
-
     }
-
-    public PriceRange PriceRange { get; set; }
-    
-    public int Stock { get; set; }
 
     public decimal Discount { get; set; }
     
-    public Shoe(string name, Brand brand, Color color, decimal price, PriceRange range, int stock)
+    public Shoe(string name, Brand brand, Color color, decimal price)
     {
         Name = name;
         Brand = brand;
         Color = color;
         Price = price;
-        PriceRange = range;
-        Stock = stock;
-    }
-
-    public bool IsAvailable()
-    {
-        if(Stock > 0)
-            return true;
-
-        return false;
     }
 
     public decimal ApplyDiscount(decimal oldPrice, int discount)
@@ -63,6 +48,7 @@ public class Shoe
                 break;
             default:
                 return newPrice;
+                
         }
         return newPrice;
     } 
