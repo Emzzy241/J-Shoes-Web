@@ -1,31 +1,6 @@
+using JShoesApp.Enums;
 
 namespace JShoesApp.Models;
-
-
-public enum Brand
-{
-    Nike,
-    Balenciaga,
-    Jordan,
-    LouisVuitton
-}
-
-public enum Color
-{
-    White,
-    Black,
-    Green,
-    Red      
-}
-
-public enum PriceRange 
-{
-    TwentyDollarsOrLess, // $0-$20
-    FiftyDollarsOrLess, // $21-$50
-    HundredDollarsOrLess, // $51-$100
-    MoreThanHundredDollars // $100+
-}
-
 
 public class Shoe
 {
@@ -73,9 +48,7 @@ public class Shoe
         decimal newPrice = 0.00M;
         switch (discount)
         {
-            case 0:
-                newPrice = oldPrice - (oldPrice * 0.00M);
-                break;
+           
             case 5:
                 newPrice = oldPrice - (oldPrice * 0.05M);
                 break;
@@ -88,6 +61,8 @@ public class Shoe
             case 50:
                 newPrice = oldPrice - (oldPrice * 0.50M);
                 break;
+            default:
+                return newPrice;
         }
         return newPrice;
     } 

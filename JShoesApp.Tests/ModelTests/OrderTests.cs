@@ -1,5 +1,6 @@
-using Xunit;
 using JShoesApp.Models;
+using JShoesApp.Enums;
+using Xunit;
 using System;
 using System.Collections.Generic;
 

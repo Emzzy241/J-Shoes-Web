@@ -1,6 +1,7 @@
 // using Moq;
-using Xunit;
+using JShoesApp.Enums;
 using JShoesApp.Models;
+using Xunit;
 using System.Threading.Tasks;
 
 namespace JShoesAppTests.ModelTests;
