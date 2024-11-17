@@ -15,13 +15,4 @@ public class Address
     
     public string StreetAddress { get; set; }
 
-    public Address(string countryName, string stateName, string cityName, string postalCode, string streetAddress)
-    {
-        CountryName = countryName;
-        StateName = stateName;
-        CityName = cityName;
-        PostalCode = postalCode;
-        StreetAddress = streetAddress;
-    }
-
 }
