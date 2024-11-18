@@ -15,20 +15,15 @@ public class Order
 
     public DateTime Date { get; set; } = DateTime.Now;
 
+    public decimal TotalPrice{
+        get => ShoeList?.Sum(shoe => shoe.Price) ?? 0.00M;
+        set {}
+    }
+
     public Order(Status status, DateTime date)
     {
         Status = status;
         Date = date;
-    }
-
-    public decimal TotalPrice(List<Shoe> shoes)
-    {
-        if(shoes == null || shoes.Count == 0)
-        {
-            return 0m; 
-        }
-
-        return shoes.Sum(shoe => shoe.Price);
     }
 
 }
