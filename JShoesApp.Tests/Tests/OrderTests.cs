@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 
 
-namespace JShoesAppTests.ModelTests;
+namespace JShoesAppTests.Tests;
 public class OrderTests
 {
 
