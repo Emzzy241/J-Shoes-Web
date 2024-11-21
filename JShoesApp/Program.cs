@@ -1,7 +1,18 @@
+using JShoesApp.Data;
+using JShoesApp.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<JShoesContext>(
+    dbContextOptions=> dbContextOptions
+    .UseMySql(
+        builder.Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(builder.Configuration["ConnectionStrings.DefaultConnection"]
+        )
+    )
+);
 
 var app = builder.Build();
 
@@ -25,4 +36,3 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
-
