@@ -16,14 +16,9 @@ public class Order
     public DateTime Date { get; set; } = DateTime.Now;
 
     public decimal TotalPrice{
-        get => ShoeList?.Sum(shoe => shoe.Price) ?? 0.00M;
+        get => ShoeList.Sum(shoe => shoe.Price);
         set {}
     }
 
-    public Order(Status status, DateTime date)
-    {
-        Status = status;
-        Date = date;
-    }
 
 }

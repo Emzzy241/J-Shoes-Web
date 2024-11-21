@@ -20,17 +20,6 @@ public class Shoe
         set => _price = Math.Round(value, 2);
     }
 
-    public decimal Discount { get; set; }
-    
-    public Shoe(string name, Brand brand, Color color, decimal price)
-    {
-        Name = name;
-        Brand = brand;
-        Color = color;
-        Price = price;
-    }
-
-    
-
+    public decimal Discount { get; set; }  
 
 }
